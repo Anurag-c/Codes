@@ -20,6 +20,7 @@ int isPossible(int *arr,int n,int pages,int m)
 
 int findPages(int *arr, int n, int m) 
 {
+    if(n < m) return -1;
     int start = *max_element(arr,arr+n);
     int end = 0;
     for(int i = 0; i < n ; i++) end += arr[i];
