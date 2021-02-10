@@ -27,7 +27,9 @@ int N_queens(int idx, int queens, vector<vector<int>>& matrix, vector<bool>& vis
         {
             matrix[row][col] = 1;
             adiag[row + col] = diag[row - col + m - 1] = vis_r[row] = vis_c[col] = true;
+            
             c += N_queens(i + 1, queens - 1, matrix, vis_r, vis_c, diag, adiag);
+            
             matrix[row][col] = 0;
             adiag[row + col] = diag[row - col + m - 1] = vis_r[row] = vis_c[col] = false;
         }
